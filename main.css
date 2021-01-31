@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+
+
+h1 {
+  color: #005766;/* フォントの色を指定する */
+  font-size: 20px;/* フォントの大きさを指定する */
+  /*text-align: center;/* 文字・画像を中央にそろえる */
+  height: 320px;/* 高さを指定する */
+  padding-top:0px;
+}
+
+
+nav {
+  background-color: #005766;/* 背景色を指定する */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;/* 文字の装飾を指定する */
+}
+
+nav a:hover {
+  color: #000000;
+}
+
+ul {
+  list-style-type: none;/* リストのマーカーを指定する */
+  padding-left: 0;
+}
+
+nav ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;/* 要素の表示形式を指定する */
+  margin-right: 40px;
+}
+
+.home label {
+  color: #000000;
+  background: #ffffff;
+}
+
+.home {
+  padding: 30px;
+  background-color: #ffffff;
+}
+
+.home h2 {
+  color: #000000;
+  border-color: #005766;
+}
+
+.home p {
+  color: #000000;
+  clear: left;/* 要素の回り込みを解除する */
+  margin: 20px;
+}
+
+
+input.textbox{
+  width: 20%;
+}
+
+
+footer {
+  text-align: center;
+  color: #ffffff;
+  background: #005766;
+}
