@@ -5,7 +5,7 @@
 個人利用及び商用利用可能です。<br>
 
 ## 使用方法
-[こちら](https://ryt-frkw.github.io)にアクセスしてください。操作方法についてもこのページに記載されています。
+[こちら](https://ryt-frkw.github.io/Spell_Check/)にアクセスしてください。操作方法についてもこのページに記載されています。
 
 ## 利用した外部ツール
 [pdfmake](https://github.com/bpampuch/pdfmake/releases)<br>
