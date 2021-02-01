@@ -9,23 +9,22 @@ html,
 
 
 h1 {
-  color: #005766;/* フォントの色を指定する */
-  font-size: 20px;/* フォントの大きさを指定する */
-  /*text-align: center;/* 文字・画像を中央にそろえる */
-  height: 320px;/* 高さを指定する */
+  color: #005766;
+  font-size: 20px;
+  height: 320px;
   padding-top:0px;
 }
 
 
 nav {
-  background-color: #005766;/* 背景色を指定する */
+  background-color: #005766;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 nav a {
   color: #ffffff;
-  text-decoration: none;/* 文字の装飾を指定する */
+  text-decoration: none;
 }
 
 nav a:hover {
@@ -33,7 +32,7 @@ nav a:hover {
 }
 
 ul {
-  list-style-type: none;/* リストのマーカーを指定する */
+  list-style-type: none;
   padding-left: 0;
 }
 
@@ -44,7 +43,7 @@ nav ul {
 }
 
 nav li {
-  display: inline-block;/* 要素の表示形式を指定する */
+  display: inline-block;
   margin-right: 40px;
 }
 
@@ -65,7 +64,7 @@ nav li {
 
 .home p {
   color: #000000;
-  clear: left;/* 要素の回り込みを解除する */
+  clear: left;
   margin: 20px;
 }
 
