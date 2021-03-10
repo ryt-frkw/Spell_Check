@@ -19,10 +19,10 @@
 
 <section class="home" id="home">
   <h2 class="title">このWebについて</h2>
-  <p>単語テスト作成ツールでは、最大25の単語とその訳を入力してスペルを問う単語テストを作成し、PDFとしてダウンロードすることができます。また、単語がシャッフルされてから単語テストを作成します。</p>
+  <p>単語テスト作成ツールでは、最大25の単語とその訳を入力してスペルまたは和訳を問う単語テストを作成し、PDFとしてダウンロードすることができます。また、単語がシャッフルされてから単語テストを作成します。</p>
   <p>単語テスト作成ツールは作者自身が単語を覚えるために単語テストを模して作ったツールです。また、このツールは個人・商用利用問わず、自由に利用できます。</p>
   <h2 class="title">使い方</h2>
-  <p>この項目の下にあるテキストボックスに表示に沿って単語のスペルと意味を入力してください。</p>
+  <p>この項目の下にあるテキストボックスに表示に沿って単語のスペルと意味（和訳）を入力してください。</p>
   <p>単語の入力が完了したら、ページ下のボタンをクリックすることでダウンロードできます。ダウンロードできるPDFファイルは、単語テストとスペルが記載されている解答の二種類です。</p>
   <h2 class="title">単語テストの作成</h2>
   <br>
@@ -51,7 +51,7 @@
   <label>単語23 スペル：<input type="text" size="60" class="textbox" id="spell_3"> 意味：<input type="text" size="60" class="textbox" id="jatext_3"></label><br>
   <label>単語24 スペル：<input type="text" size="60" class="textbox" id="spell_24"> 意味：<input type="text" size="60" class="textbox" id="jatext_24"></label><br>
   <label>単語25 スペル：<input type="text" size="60" class="textbox" id="spell_20"> 意味：<input type="text" size="60" class="textbox" id="jatext_20"></label><br><br>
-  <input type="button" value="単語テストを作成する" id="runbut" onclick="butrun1()"> <input type="button" value="解答を作成する" id="runbut2" onclick="butrun2()">
+  <input type="button" value="スペルの問う単語テストを作成する" id="runbut" onclick="butrun1()"> <input type="button" value="和訳を問う単語テストを作成する" id="runbut3" onclick="butrun3()">　<input type="button" value="解答を作成する" id="runbut2" onclick="butrun2()">
   <br><br><br><p>このツールの詳しい情報については<a href="https://github.com/ryt-frkw/Spell_Check">GitHub</a>を参照してください。</p>
 </section>
 <script>
@@ -125,7 +125,7 @@
       pdfMake.createPdf(
         {
           content: [{
-            text: "単語テスト\n\n\n[　　　　/ 100 ]\n\n\n\n"
+            text: "単語テスト - スペル\n\n\n[　　　　/ 100 ]\n\n\n\n"
           },
             table_content,
           { text: "4点 * 25問" }
@@ -133,7 +133,7 @@
           defaultStyle: {
             font: 'GenShin'
           }
-        }).download("英単語テスト.pdf");
+        }).download("英単語テスト_スペル.pdf");
     }
   function butrun2() {
     pdfMake.fonts = {
@@ -215,7 +215,86 @@
         }
       }).download("英単語テスト_解答.pdf");
   }
-  
+  function butrun3() {
+      pdfMake.fonts = {
+        GenShin: {
+          normal: 'GenShinGothic-Normal-Sub.ttf',
+          bold: 'GenShinGothic-Normal-Sub.ttf',
+          italics: 'GenShinGothic-Normal-Sub.ttf',
+          bolditalics: 'GenShinGothic-Normal-Sub.ttf'
+        }
+      }
+
+      var table_content = {
+        table: {
+          widths: '*',
+          body: [
+            []
+          ]
+        }
+      };
+      var table_head = ['スペル', '意味'];
+      var head_tr = [];
+      for (let v of table_head) {
+        head_tr.push({
+          text: v,
+          fillColor: '#dddddd',
+          style: ["tableHeader", "tableCell"]
+        });
+      };
+      table_content["table"]["body"][0] = head_tr;
+      var table_body = [
+        [" " + spell_1.value, " "],
+        [" " + spell_2.value, " "],
+        [" " + spell_3.value, " "],
+        [" " + spell_4.value, " "],
+        [" " + spell_5.value, " "],
+        [" " + spell_6.value, " "],
+        [" " + spell_7.value, " "],
+        [" " + spell_8.value, " "],
+        [" " + spell_9.value, " "],
+        [" " + spell_10.value, " "],
+        [" " + spell_11.value, " "],
+        [" " + spell_12.value, " "],
+        [" " + spell_13.value, " "],
+        [" " + spell_14.value, " "],
+        [" " + spell_15.value, " "],
+        [" " + spell_16.value, " "],
+        [" " + spell_17.value, " "],
+        [" " + spell_18.value, " "],
+        [" " + spell_19.value, " "],
+        [" " + spell_20.value, " "],
+        [" " + spell_21.value, " "],
+        [" " + spell_22.value, " "],
+        [" " + spell_23.value, " "],
+        [" " + spell_24.value, " "],
+        [" " + spell_25.value, " "]
+      ]
+        ;
+      for (let a of table_body) {
+      var tr = [];
+      for (let v of a) {
+        tr.push({
+          text: v,
+          fillColor: '#fff',
+          style: ["tableCell"]
+        });
+      };
+      table_content["table"]["body"].push(tr);
+    };
+    pdfMake.createPdf(
+      {
+        content: [{
+          text: "単語テスト - 和訳\n\n\n[　　　　/ 100 ]\n\n\n\n"
+        },
+          table_content,
+        { text: "4点 * 25問" }
+        ],
+        defaultStyle: {
+          font: 'GenShin'
+        }
+        }).download("英単語テスト_和訳.pdf");
+    }
  
 </script>
 </body>
